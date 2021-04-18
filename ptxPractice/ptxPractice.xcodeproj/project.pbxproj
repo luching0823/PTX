@@ -13,6 +13,9 @@
 		75EAD64926271892003641FE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 75EAD64726271892003641FE /* Main.storyboard */; };
 		75EAD64B26271896003641FE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 75EAD64A26271896003641FE /* Assets.xcassets */; };
 		75EAD64E26271896003641FE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 75EAD64C26271896003641FE /* LaunchScreen.storyboard */; };
+		75EAD6572629B6C3003641FE /* Train.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75EAD6562629B6C2003641FE /* Train.swift */; };
+		75EAD65A2629C506003641FE /* TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75EAD6592629C506003641FE /* TableViewController.swift */; };
+		75EAD665262AAD97003641FE /* Station.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75EAD664262AAD97003641FE /* Station.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +27,9 @@
 		75EAD64A26271896003641FE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		75EAD64D26271896003641FE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		75EAD64F26271896003641FE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		75EAD6562629B6C2003641FE /* Train.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Train.swift; sourceTree = "<group>"; };
+		75EAD6592629C506003641FE /* TableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewController.swift; sourceTree = "<group>"; };
+		75EAD664262AAD97003641FE /* Station.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Station.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,6 +69,9 @@
 				75EAD64A26271896003641FE /* Assets.xcassets */,
 				75EAD64C26271896003641FE /* LaunchScreen.storyboard */,
 				75EAD64F26271896003641FE /* Info.plist */,
+				75EAD6562629B6C2003641FE /* Train.swift */,
+				75EAD6592629C506003641FE /* TableViewController.swift */,
+				75EAD664262AAD97003641FE /* Station.swift */,
 			);
 			path = ptxPractice;
 			sourceTree = "<group>";
@@ -137,8 +146,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				75EAD6572629B6C3003641FE /* Train.swift in Sources */,
 				75EAD64626271892003641FE /* ViewController.swift in Sources */,
 				75EAD64226271892003641FE /* AppDelegate.swift in Sources */,
+				75EAD65A2629C506003641FE /* TableViewController.swift in Sources */,
+				75EAD665262AAD97003641FE /* Station.swift in Sources */,
 				75EAD64426271892003641FE /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
