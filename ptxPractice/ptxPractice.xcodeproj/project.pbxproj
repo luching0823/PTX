@@ -3,10 +3,11 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7128DC590565185EAC3FFD1B /* Pods_ptxPractice.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 154CC43ED583879CDE284826 /* Pods_ptxPractice.framework */; };
 		75EAD64226271892003641FE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75EAD64126271892003641FE /* AppDelegate.swift */; };
 		75EAD64426271892003641FE /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75EAD64326271892003641FE /* SceneDelegate.swift */; };
 		75EAD64626271892003641FE /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75EAD64526271892003641FE /* ViewController.swift */; };
@@ -14,11 +15,14 @@
 		75EAD64B26271896003641FE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 75EAD64A26271896003641FE /* Assets.xcassets */; };
 		75EAD64E26271896003641FE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 75EAD64C26271896003641FE /* LaunchScreen.storyboard */; };
 		75EAD6572629B6C3003641FE /* Train.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75EAD6562629B6C2003641FE /* Train.swift */; };
-		75EAD65A2629C506003641FE /* TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75EAD6592629C506003641FE /* TableViewController.swift */; };
 		75EAD665262AAD97003641FE /* Station.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75EAD664262AAD97003641FE /* Station.swift */; };
+		75EAD669262BFFA3003641FE /* ptxApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75EAD668262BFFA2003641FE /* ptxApi.swift */; };
+		75EAD678262C1B20003641FE /* TableViewVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75EAD677262C1B20003641FE /* TableViewVC.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		154CC43ED583879CDE284826 /* Pods_ptxPractice.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ptxPractice.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		3549A1B47C647696F5D3021D /* Pods-ptxPractice.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ptxPractice.release.xcconfig"; path = "Target Support Files/Pods-ptxPractice/Pods-ptxPractice.release.xcconfig"; sourceTree = "<group>"; };
 		75EAD63E26271892003641FE /* ptxPractice.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ptxPractice.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		75EAD64126271892003641FE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		75EAD64326271892003641FE /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -28,8 +32,10 @@
 		75EAD64D26271896003641FE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		75EAD64F26271896003641FE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		75EAD6562629B6C2003641FE /* Train.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Train.swift; sourceTree = "<group>"; };
-		75EAD6592629C506003641FE /* TableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewController.swift; sourceTree = "<group>"; };
 		75EAD664262AAD97003641FE /* Station.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Station.swift; sourceTree = "<group>"; };
+		75EAD668262BFFA2003641FE /* ptxApi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ptxApi.swift; sourceTree = "<group>"; };
+		75EAD677262C1B20003641FE /* TableViewVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewVC.swift; sourceTree = "<group>"; };
+		F4702FF9BE01857115DDB438 /* Pods-ptxPractice.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ptxPractice.debug.xcconfig"; path = "Target Support Files/Pods-ptxPractice/Pods-ptxPractice.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -37,17 +43,37 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7128DC590565185EAC3FFD1B /* Pods_ptxPractice.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		3082B02FAFEC041B0E25BD72 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				F4702FF9BE01857115DDB438 /* Pods-ptxPractice.debug.xcconfig */,
+				3549A1B47C647696F5D3021D /* Pods-ptxPractice.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		59F2CAAC07B92167945BA969 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				154CC43ED583879CDE284826 /* Pods_ptxPractice.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		75EAD63526271892003641FE = {
 			isa = PBXGroup;
 			children = (
 				75EAD64026271892003641FE /* ptxPractice */,
 				75EAD63F26271892003641FE /* Products */,
+				3082B02FAFEC041B0E25BD72 /* Pods */,
+				59F2CAAC07B92167945BA969 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -70,8 +96,9 @@
 				75EAD64C26271896003641FE /* LaunchScreen.storyboard */,
 				75EAD64F26271896003641FE /* Info.plist */,
 				75EAD6562629B6C2003641FE /* Train.swift */,
-				75EAD6592629C506003641FE /* TableViewController.swift */,
 				75EAD664262AAD97003641FE /* Station.swift */,
+				75EAD668262BFFA2003641FE /* ptxApi.swift */,
+				75EAD677262C1B20003641FE /* TableViewVC.swift */,
 			);
 			path = ptxPractice;
 			sourceTree = "<group>";
@@ -83,9 +110,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 75EAD65226271896003641FE /* Build configuration list for PBXNativeTarget "ptxPractice" */;
 			buildPhases = (
+				40CF14D61839D5C69A4FC053 /* [CP] Check Pods Manifest.lock */,
 				75EAD63A26271892003641FE /* Sources */,
 				75EAD63B26271892003641FE /* Frameworks */,
 				75EAD63C26271892003641FE /* Resources */,
+				9C774120980786BB494659F4 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -141,15 +170,58 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		40CF14D61839D5C69A4FC053 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-ptxPractice-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		9C774120980786BB494659F4 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-ptxPractice/Pods-ptxPractice-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-ptxPractice/Pods-ptxPractice-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-ptxPractice/Pods-ptxPractice-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		75EAD63A26271892003641FE /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				75EAD678262C1B20003641FE /* TableViewVC.swift in Sources */,
 				75EAD6572629B6C3003641FE /* Train.swift in Sources */,
+				75EAD669262BFFA3003641FE /* ptxApi.swift in Sources */,
 				75EAD64626271892003641FE /* ViewController.swift in Sources */,
 				75EAD64226271892003641FE /* AppDelegate.swift in Sources */,
-				75EAD65A2629C506003641FE /* TableViewController.swift in Sources */,
 				75EAD665262AAD97003641FE /* Station.swift in Sources */,
 				75EAD64426271892003641FE /* SceneDelegate.swift in Sources */,
 			);
@@ -295,6 +367,7 @@
 		};
 		75EAD65326271896003641FE /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = F4702FF9BE01857115DDB438 /* Pods-ptxPractice.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -314,6 +387,7 @@
 		};
 		75EAD65426271896003641FE /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3549A1B47C647696F5D3021D /* Pods-ptxPractice.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;

@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import Alamofire
 
 class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource {
     
@@ -15,32 +16,36 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
     @IBOutlet weak var startingStationLabel: UILabel!
     @IBOutlet weak var endingStationBtn: UIButton!
     @IBOutlet weak var endingStationLabel: UILabel!
-    @IBOutlet weak var dateView: UIView!
-    @IBOutlet weak var datePicker: UIDatePicker!
     
     var pressBtn: UIButton?
     var chooseStation: String?
-    var chooseDate: Date?
-    var start: Int?
-    var end: Int?
+    var chooseDate: String = "2021-04-18"
+    var start: String = "0990"
+    var end: String = "1070"
+    let datePicker = UIDatePicker()
+    let dateFormatter = DateFormatter()
     let pickerView = UIPickerView()
     let toolBar = UIToolbar()
-    let station = [Station(stationName: "南港", stationNum: 1), Station(stationName: "臺北", stationNum: 2), Station(stationName: "板橋", stationNum: 3), Station(stationName: "桃園", stationNum: 4), Station(stationName: "新竹", stationNum: 5), Station(stationName: "苗栗", stationNum: 6), Station(stationName: "台中", stationNum: 7), Station(stationName: "彰化", stationNum: 8), Station(stationName: "雲林", stationNum: 9), Station(stationName: "嘉義", stationNum: 10), Station(stationName: "台南", stationNum: 11), Station(stationName: "左營", stationNum: 12)]
+    let station = [Station(stationName: "南港", stationNum: "0990"), Station(stationName: "臺北", stationNum: "1000"), Station(stationName: "板橋", stationNum: "1010"), Station(stationName: "桃園", stationNum: "1020"), Station(stationName: "新竹", stationNum: "1030"), Station(stationName: "苗栗", stationNum: "1035"), Station(stationName: "台中", stationNum: "1040"), Station(stationName: "彰化", stationNum: "1043"), Station(stationName: "雲林", stationNum: "1047"), Station(stationName: "嘉義", stationNum: "1050"), Station(stationName: "台南", stationNum: "1060"), Station(stationName: "左營", stationNum: "1070")]
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        dateView.isHidden = true
-        datePicker.isHidden = true
-        datePicker.minimumDate = Date()
-        
+        datePicker.backgroundColor = .white
+        datePicker.setValue(UIColor(named: "PickerText"), forKey: "textColor")
     }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "showResult" {
+            let vc = segue.destination as! TableViewVC
+            vc.start = start
+            vc.end = end
+            vc.date = chooseDate
+        }
+    }
+    
     @IBAction func chooseDate(_ sender: UIButton) {
         pressBtn = searchDateBtn
-        dateView.isHidden = false
-        datePicker.isHidden = false
-        datePicker.addTarget(self, action: #selector(dateChanged), for: .valueChanged)
-        initToolBar()
-//        initDatePicker()
+        initDatePickerView()
     }
     
     @IBAction func chooseStartingStation(_ sender: UIButton) {
@@ -54,8 +59,25 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
     }
     
     @IBAction func goToSearch(_ sender: UIButton) {
+        performSegue(withIdentifier: "showResult", sender: nil)
     }
     
+    func initDatePickerView() {
+        // 初始化datePickerView
+        datePicker.backgroundColor = .white
+        datePicker.autoresizingMask = .flexibleWidth
+        datePicker.datePickerMode = .date
+        datePicker.setValue(UIColor.black, forKey: "textColor")
+        datePicker.frame = CGRect.init(x: 0.0, y: UIScreen.main.bounds.size.height - 300, width: UIScreen.main.bounds.size.width, height: 300)
+        datePicker.preferredDatePickerStyle = .wheels
+        datePicker.locale = Locale(
+            identifier: "zh_TW")
+        datePicker.minimumDate = Date()
+        datePicker.addTarget(self, action: #selector(dateChanged), for: .valueChanged)
+        self.view.addSubview(datePicker)
+        initToolBar()
+    }
+
     func initPickerView() {
         // 初始化pickerView
         pickerView.backgroundColor = .white
@@ -93,8 +115,7 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
     
     @objc func cancel() {
         if pressBtn == searchDateBtn {
-            dateView.isHidden = true
-            datePicker.isHidden = true
+            datePicker.removeFromSuperview()
         } else {
             pickerView.removeFromSuperview()
         }
@@ -104,9 +125,8 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
     
     @objc func done() {
         if pressBtn == searchDateBtn {
-            dateView.isHidden = true
-            datePicker.isHidden = true
-//            dateChanged()
+            datePicker.removeFromSuperview()
+            dateChanged()
         } else {
             pickerView.removeFromSuperview()
         }
@@ -115,8 +135,7 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
     }
     
     @objc func dateChanged() {
-        let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = "yyyy-mm-dd"
+        dateFormatter.dateFormat = "yyyy-MM-dd"
         dateLabel.text = dateFormatter.string(from: datePicker.date)
     }
     
@@ -139,12 +158,12 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
         if pressBtn?.tag == 1 {
             startingStationLabel.text = chooseStation
             start = station[row].stationNum
-            print("start: \(start!)")
+            print("start: \(start)")
         }
         if pressBtn?.tag == 2 {
             endingStationLabel.text = chooseStation
             end = station[row].stationNum
-            print("end: \(end!)")
+            print("end: \(end)")
         }
     }
 }

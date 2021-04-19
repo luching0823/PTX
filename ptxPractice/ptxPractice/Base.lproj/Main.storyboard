@@ -161,27 +161,8 @@
                                 </state>
                                 <connections>
                                     <action selector="goToSearch:" destination="440-Fv-E0x" eventType="touchUpInside" id="YF3-Ty-AZC"/>
-                                    <segue destination="BYZ-38-t0r" kind="show" id="QsO-zB-zKn"/>
                                 </connections>
                             </button>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Xdu-tI-jLl">
-                                <rect key="frame" x="0.0" y="596" width="414" height="300"/>
-                                <subviews>
-                                    <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="date" style="wheels" translatesAutoresizingMaskIntoConstraints="NO" id="z6h-L2-Fc7">
-                                        <rect key="frame" x="0.0" y="50" width="414" height="250"/>
-                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <locale key="locale" localeIdentifier="zh_TW"/>
-                                    </datePicker>
-                                </subviews>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                                <constraints>
-                                    <constraint firstItem="z6h-L2-Fc7" firstAttribute="height" secondItem="Xdu-tI-jLl" secondAttribute="height" multiplier="0.833333" id="JXx-7F-x72"/>
-                                    <constraint firstAttribute="height" constant="300" id="MiX-sc-dM1"/>
-                                    <constraint firstItem="z6h-L2-Fc7" firstAttribute="leading" secondItem="Xdu-tI-jLl" secondAttribute="leading" id="bdy-i3-U9l"/>
-                                    <constraint firstAttribute="bottom" secondItem="z6h-L2-Fc7" secondAttribute="bottom" id="dA0-2S-Ohm"/>
-                                    <constraint firstAttribute="trailing" secondItem="z6h-L2-Fc7" secondAttribute="trailing" id="s6M-Zo-iTl"/>
-                                </constraints>
-                            </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="uVi-0r-rlG"/>
                         <color key="backgroundColor" red="0.95064722064343143" green="0.92462382868109716" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -189,25 +170,21 @@
                             <constraint firstItem="uVi-0r-rlG" firstAttribute="bottom" secondItem="ANY-zH-riy" secondAttribute="bottom" constant="116" id="Awz-bM-ec5"/>
                             <constraint firstItem="IYm-ET-YUu" firstAttribute="centerY" secondItem="Fsv-Z5-2q2" secondAttribute="centerY" id="L41-c8-3Xt"/>
                             <constraint firstItem="IYm-ET-YUu" firstAttribute="leading" secondItem="uVi-0r-rlG" secondAttribute="leading" constant="70" id="Nwy-O2-uAL"/>
-                            <constraint firstItem="Xdu-tI-jLl" firstAttribute="trailing" secondItem="uVi-0r-rlG" secondAttribute="trailing" id="OBy-n8-uTr"/>
                             <constraint firstItem="ANY-zH-riy" firstAttribute="centerX" secondItem="Fsv-Z5-2q2" secondAttribute="centerX" id="Vsd-8u-Cfu"/>
                             <constraint firstItem="ANY-zH-riy" firstAttribute="width" secondItem="Fsv-Z5-2q2" secondAttribute="width" multiplier="0.458937" id="WMU-tU-S3x"/>
                             <constraint firstItem="uVi-0r-rlG" firstAttribute="trailing" secondItem="IYm-ET-YUu" secondAttribute="trailing" constant="54" id="sj1-Je-0Ir"/>
-                            <constraint firstItem="Xdu-tI-jLl" firstAttribute="bottom" secondItem="uVi-0r-rlG" secondAttribute="bottom" constant="34" id="vsk-ZM-CGc"/>
                             <constraint firstItem="ANY-zH-riy" firstAttribute="height" secondItem="Fsv-Z5-2q2" secondAttribute="height" multiplier="0.0636161" id="xqF-Bn-B8m"/>
-                            <constraint firstItem="Xdu-tI-jLl" firstAttribute="leading" secondItem="uVi-0r-rlG" secondAttribute="leading" id="zET-e3-s6s"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="查詢" id="M9O-bR-1Em"/>
                     <connections>
                         <outlet property="dateLabel" destination="MaW-Ud-iL4" id="ok4-QQ-nyG"/>
-                        <outlet property="datePicker" destination="z6h-L2-Fc7" id="12M-YL-Ass"/>
-                        <outlet property="dateView" destination="Xdu-tI-jLl" id="fr1-3W-Aka"/>
                         <outlet property="endingStationBtn" destination="yip-Ud-Qnp" id="yPM-cR-wyc"/>
                         <outlet property="endingStationLabel" destination="0fg-I2-16x" id="fpS-1d-98o"/>
                         <outlet property="searchDateBtn" destination="jdz-hT-KTK" id="Zpz-jc-yol"/>
                         <outlet property="startingStationBtn" destination="8hV-uy-HGZ" id="4uc-R7-N3T"/>
                         <outlet property="startingStationLabel" destination="4aL-pK-KSq" id="BzU-Ct-nJL"/>
+                        <segue destination="BYZ-38-t0r" kind="show" identifier="showResult" id="YDW-fl-Y3f"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ANB-P8-GHD" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -217,7 +194,7 @@
         <!--結果-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="TableViewController" customModule="ptxPractice" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="TableViewVC" customModule="ptxPractice" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

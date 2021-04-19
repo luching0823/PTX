@@ -9,9 +9,9 @@ import Foundation
 
 class Station {
     var stationName: String
-    var stationNum: Int
+    var stationNum: String
     
-    init(stationName: String, stationNum: Int) {
+    init(stationName: String, stationNum: String) {
         self.stationName = stationName
         self.stationNum = stationNum
     }
